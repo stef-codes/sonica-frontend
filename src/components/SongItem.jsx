@@ -19,8 +19,6 @@ class SongItem extends Component {
               {song.trackName}
             </Link>
           </h3>
-          {/* <p>{song.synopsis}</p>
-          <p>{song.synopsis}</p> */}
       </div>
     );
   }

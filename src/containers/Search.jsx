@@ -22,14 +22,10 @@ class Search extends React.Component {
     handleSubmit = e => {
         e.preventDefault()
         let search_value =  (this.state.musicArtist) || (this.state.musicTrack)
-        // debugger
         console.log(e.target)
         fetch(`https://itunes.apple.com/search?term=${search_value}&entity=${e.target.name}`)
         .then(response => response.json())
-
         .then(songs => {
-            // debugger
-            // console.log(songs.results)
             this.setState({
                 searchResults: songs.results
             })
@@ -47,13 +43,11 @@ class Search extends React.Component {
             trackId: id,
             showResults: true
         })
-    // this.props.addSong(songObj)
-    // this.props.addTheSongToPlaylist(songObj)
+
     }
     render () {
 
-        //if show_results true then const result_list = map through songs and make objects 
-        // if (this.state.showResults) 
+
              const {searchResults} = this.state; 
              debugger
         
@@ -68,8 +62,6 @@ class Search extends React.Component {
                     <button type="submit">Search</button> 
                 </form>
                <br></br>
-
-
         
                {/* Should be a component? */}
         

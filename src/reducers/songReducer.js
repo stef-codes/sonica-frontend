@@ -15,6 +15,7 @@ export default (state = {songs: [], loading:false}, action) => {
             return {
                 ...state,
                 songs: [...state.songs, action.payload]
+              
             }
         default:
             return state 

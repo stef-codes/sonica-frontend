@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
 import Search from './containers/Search';
 import SongItem from './components/SongItem';
@@ -13,6 +14,7 @@ class App extends React.Component {
     return (
     <div>
       <Router>
+        <NavBar/>
         <Route exact path={"/"} component={HomePage} />
         <Route exact path={"/search"} component={Search} />
         <Route exact path={"/song"} component={SongItem} />

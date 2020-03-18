@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from "react-router-dom";
 
-class SongItem extends Component {
-
-  render() {
+function SongItem() {
     const song = this.props.song;
 
     return (
@@ -21,7 +19,7 @@ class SongItem extends Component {
           </h3>
       </div>
     );
-  }
+  
 }
 
 

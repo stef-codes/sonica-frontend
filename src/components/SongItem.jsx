@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-function SongItem() {
-    const song = this.props.song;
-
+function SongItem({song}) {
     return (
       <div data-id={song.trackId}>
           <img src={song.artworkUrl100} alt={`${song.trackName}`} />

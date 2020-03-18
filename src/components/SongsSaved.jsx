@@ -34,8 +34,10 @@ class SongsSaved extends React.Component {
 
         <div>
         <br/>
-            {song.trackName}
-        
+            <strong>{song.trackName}</strong>
+            <br/>
+            <img src={song.artworkUrl100} alt={song.trackName} />
+            <br/>
             <button id={song.trackId} onClick={() => this.handleClick(song)}>
               Add to Journal
             </button>   

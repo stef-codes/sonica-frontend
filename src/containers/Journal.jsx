@@ -16,8 +16,10 @@ class Journal extends React.Component {
 
   render() {
     const songs = this.props.songs.map((song) => 
+    { 
+      if (song.journals.length > 0) {
+      return (
     <div data-id={song.trackId} className="journalEntry">
-        
         <JournalEntrySong song={song} />
         <div>
         <br/>
@@ -25,8 +27,8 @@ class Journal extends React.Component {
          <hr/>
         </div>
     </div>
-    )
-
+      )}
+    })
     return (
       <div>
        <h2>Journal</h2>

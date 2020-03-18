@@ -1,2 +1,21 @@
 Center the SongItem page
 
+Break search into smaller components. The components I want are search results, form component - Stef
+
+
+Create an error page for routes that aren't found?
+
+Build search sort and filter for songs and journal 
+
+
+Done: 
+        Use ReactPlayer on the show page for a selected song 
+        import ReactPlayer from 'react-player'
+        import { PlayerIcon } from 'react-player-controls'
+                                <ReactPlayer url={result.previewUrl} playingfalse>
+                                    <button>Play</button>
+                                    <button>Pause</button>
+                                    <PlayerIcon.Play width={32} height={32} style={{ marginRight: 32 }} />
+                                    <PlayerIcon.Pause width={32} height={32} style={{ marginRight: 32 }} />
+                                </ReactPlayer>
+        npm install react-player --save

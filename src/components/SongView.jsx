@@ -1,4 +1,5 @@
 import React from 'react'
+import './SongView.styles.css'
 import { connect } from 'react-redux';
 import { addSong } from '../actions/song'; 
 
@@ -23,7 +24,7 @@ class SongView extends React.Component {
   render() {
      const song = this.state;
     return (
-      <div>
+      <div className="track">
           <img src={song.artworkUrl100} alt={song.trackName} />
           <h3>{song.trackName}</h3>
           <p>Genre: {song.primaryGenreName}</p>

@@ -6,8 +6,7 @@ class Search extends React.Component {
     state = {
         id: "",
         trackId: "",
-        musicTrack: "",
-        musicArtist: "", 
+        searchTerm: "",
         searchResults: [],
         addToPlaylist:false
     }
@@ -21,9 +20,14 @@ class Search extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        let search_value =  (this.state.musicArtist) || (this.state.musicTrack)
+        let searchValue =  this.state.searchTerm
+        let searchString = searchValue.replace(" ", "+")
+
+        // What fields in the form were filled in when they clicked search
+
+        console.log(searchValue.replace(" ", "+"))
         console.log(e.target)
-        fetch(`https://itunes.apple.com/search?term=${search_value}&entity=${e.target.name}`)
+        fetch(`https://itunes.apple.com/search?term=${searchString}&entity=${e.target.name}`)
         .then(response => response.json())
         .then(songs => {
             this.setState({
@@ -49,16 +53,13 @@ class Search extends React.Component {
 
 
              const {searchResults} = this.state; 
-             debugger
+
         
         return (
             <div>
                 <form onSubmit={this.handleSubmit} >
-                    <h3>Search by Artist Name</h3>
-                    <input type="text" name="musicArtist" value={this.state.musicArtist} onChange={this.handleChange} placeholder="Cher" />
-                    <button type="submit">Search</button> 
-                    <h3>Search by Song Name</h3>
-                    <input type="text" name="musicTrack" value={this.state.musicTrack} onChange={this.handleChange} placeholder="Thriller" />
+                    <h3>Search for a Song</h3>
+                    <input type="text" name="searchTerm" value={this.state.searchTerm} onChange={this.handleChange} placeholder="Nipsey Hussle" />
                     <button type="submit">Search</button> 
                 </form>
                <br></br>

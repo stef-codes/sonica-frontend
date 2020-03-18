@@ -4,9 +4,9 @@ import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
 import Search from './containers/Search';
 import SongItem from './components/SongItem';
-import SongView from './components/SongView'; 
-import SongsSaved from './components/SongsSaved'
-import Journal from './components/Journal';
+import SongView from './containers/SongView'; 
+import SongsSaved from './containers/SongsSaved'
+import Journal from './containers/Journal';
 
 
 class App extends React.Component {

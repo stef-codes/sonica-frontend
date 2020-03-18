@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getSongs } from '../actions/song'
+import JournalEntrySong from './JournalEntrySong'
+import JournalEntryText from './JournalEntryText'
 
 
 class Journal extends React.Component {
@@ -14,36 +16,21 @@ class Journal extends React.Component {
 
   render() {
     const songs = this.props.songs.map((song) => 
-    <>
-        <div>
-        <br/>
-            <strong>Song: </strong>{song.trackName}
-        <br/>
-            <strong>Artist: </strong>{song.artistName}
- 
-        <br/>
-        </div>
+    <div data-id={song.trackId} className="journalEntry">
         
+        <JournalEntrySong song={song} />
         <div>
         <br/>
-            {song.journals.map((entry) => 
-            <div>
-            <br/>
-            <strong>Feeling: </strong>{entry.feeling_name}
-            <br/>
-            <strong>Entry: </strong>{entry.entry_text}
-            <br/>
-            </div>
-            )}
+          <JournalEntryText text={song.journals} />
          <hr/>
         </div>
-    </>
+    </div>
     )
 
     return (
       <div>
        <h2>Journal</h2>
-        <ul>{this.props.loading ? <h3>...loading entries</h3> : songs} </ul>
+        <ul>{this.props.loading ? <h3>...loading entries</h3> : songs}</ul>
       </div>
     );
   }

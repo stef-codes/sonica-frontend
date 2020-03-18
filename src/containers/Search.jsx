@@ -4,11 +4,9 @@ import SongItem from '../components/SongItem'
 
 class Search extends React.Component {
     state = {
-        id: "",
         trackId: "",
         searchTerm: "",
-        searchResults: [],
-        addToPlaylist:false
+        searchResults: []
     }
 
     handleChange = e => {
@@ -22,12 +20,9 @@ class Search extends React.Component {
         e.preventDefault()
         let searchValue =  this.state.searchTerm
         let searchString = searchValue.replace(" ", "+")
-
-        // What fields in the form were filled in when they clicked search
-
         console.log(searchValue.replace(" ", "+"))
         console.log(e.target)
-        fetch(`https://itunes.apple.com/search?term=${searchString}&entity=${e.target.name}`)
+        fetch(`https://itunes.apple.com/search?term=${searchString}&media=music`)
         .then(response => response.json())
         .then(songs => {
             this.setState({
@@ -43,12 +38,21 @@ class Search extends React.Component {
 
     handleClick = id => {
         this.setState({
-            id: "",
             trackId: id,
             showResults: true
         })
-
     }
+
+    handleValue = id => {
+        this.setState({
+            trackId: id,
+            showResults: true
+        })
+    }
+
+
+
+
     render () {
 
 
@@ -57,14 +61,12 @@ class Search extends React.Component {
         
         return (
             <div>
-                <form onSubmit={this.handleSubmit} >
-                    <h3>Search for a Song</h3>
-                    <input type="text" name="searchTerm" value={this.state.searchTerm} onChange={this.handleChange} placeholder="Nipsey Hussle" />
-                    <button type="submit">Search</button> 
-                </form>
+            <form onSubmit={this.handleSubmit} >
+                <h3>Search for a Song</h3>
+                <input type="text" name="searchTerm" onChange={this.handleChange} placeholder="Nipsey Hussle" />
+                <button type="submit">Search</button> 
+            </form>
                <br></br>
-        
-               {/* Should be a component? */}
         
                <div>
                    {searchResults.map(song =>

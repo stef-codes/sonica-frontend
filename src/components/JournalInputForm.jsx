@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import { withRouter } from "react-router-dom";
 import {addEntry} from '../actions/journal'
 // import '../JournalInputForm.styles.css'
 
@@ -16,12 +17,12 @@ class JournalInputForm extends React.Component {
         })
     }
 
-
     handleSubmit = e => {
+        debugger
         e.preventDefault()
         console.log(this.state)
-        this.props.addEntry(this.state)
-        this.props.history.push("/journal");
+        this.props.addEntry(this.state).then(() =>
+        this.props.history.push('/journal'));
         
   
 
@@ -54,4 +55,4 @@ class JournalInputForm extends React.Component {
     
 }
     
-export default connect (null, {addEntry}) (JournalInputForm);
+export default withRouter(connect (null, {addEntry}) (JournalInputForm));

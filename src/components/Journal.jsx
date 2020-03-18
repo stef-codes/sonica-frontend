@@ -17,23 +17,25 @@ class Journal extends React.Component {
     <>
         <div>
         <br/>
-            Song: {song.trackName}
+            <strong>Song: </strong>{song.trackName}
         <br/>
-            Artist: {song.artistName}
+            <strong>Artist: </strong>{song.artistName}
  
         <br/>
         </div>
         
         <div>
+        <br/>
             {song.journals.map((entry) => 
-
             <div>
-                Feeling: {entry.feeling_name}
             <br/>
-                Entry: {entry.entry_text}
+            <strong>Feeling: </strong>{entry.feeling_name}
+            <br/>
+            <strong>Entry: </strong>{entry.entry_text}
+            <br/>
             </div>
-
             )}
+         <hr/>
         </div>
     </>
     )

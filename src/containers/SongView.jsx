@@ -1,5 +1,5 @@
 import React from 'react'
-import './SongView.styles.css'
+import '../styles/SongView.styles.css'
 import { connect } from 'react-redux';
 import { addSong } from '../actions/song'; 
 

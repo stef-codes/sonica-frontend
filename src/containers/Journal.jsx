@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { getSongs } from '../actions/song'
-import JournalEntrySong from './JournalEntrySong'
-import JournalEntryText from './JournalEntryText'
+import JournalEntrySong from '../components/JournalEntrySong'
+import JournalEntryText from '../components/JournalEntryText'
 
 
 class Journal extends React.Component {

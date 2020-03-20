@@ -19,7 +19,7 @@ class App extends React.Component {
         <Route exact path={"/search"} component={Search} />
         <Route exact path={"/song"} component={SongItem} />
         <Route exact path="/song/:trackId" component={SongView} />
-        <Route exact path="/saved" component={SongsSaved} />
+        <Route exact path="/songs" component={SongsSaved} />
         <Route exact path="/journal" component={Journal} />
       </Router>
     </div>

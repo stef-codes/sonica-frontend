@@ -3,6 +3,7 @@ import React from 'react'
 function JournalEntryText({text}) {
     return (
         <div>
+            <br/>
             {text.map((entry) => 
             <div>
             <br/>
@@ -10,8 +11,10 @@ function JournalEntryText({text}) {
             <br/>
             <strong>Entry: </strong>{entry.entry_text}
             <br/>
+            <hr/>
             </div>
             )}
+            <hr/>
         </div>
     )
 }

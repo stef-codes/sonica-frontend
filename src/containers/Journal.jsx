@@ -10,25 +10,20 @@ class Journal extends React.Component {
       this.props.getSongs();
   }
 
-  handleClick = e => {
-      debugger
-  }
-
   render() {
     const songs = this.props.songs.map((song) => 
     { 
       if (song.journals.length > 0) {
       return (
-    <div data-id={song.trackId} className="journalEntry">
-        <JournalEntrySong song={song} />
-        <div>
-        <br/>
-          <JournalEntryText text={song.journals} />
-         <hr/>
+        <div data-id={song.trackId} className="journalEntry">
+            <JournalEntrySong song={song} />
+            <JournalEntryText text={song.journals} />
         </div>
-    </div>
       )}
-    })
+      return null
+    }
+    
+    )
     return (
       <div>
        <h2>Journal</h2>
@@ -41,7 +36,7 @@ class Journal extends React.Component {
 const mapStateToProps = state => {
     console.log("Song State", state)
     return {
-      songs: state.songReducer.songs,
+      songs: state.songReducer.songs.reverse(),
       loading: state.songReducer.loading
     }
 }

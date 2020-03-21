@@ -18,7 +18,7 @@ class SongView extends React.Component {
 
   handleClick = song => {
     this.props.addSong(song).then(() =>
-    this.props.history.push("/saved"))
+    this.props.history.push("/songs"))
   };
 
   handlePlay = () => {

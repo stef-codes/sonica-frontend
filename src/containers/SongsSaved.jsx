@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { getSongs } from '../actions/song'
 import JournalInputForm from './JournalInputForm'
+import Song from '../components/Song'
 
 
 class SongsSaved extends React.Component {
@@ -9,7 +10,7 @@ class SongsSaved extends React.Component {
       this.props.getSongs();
   }
   state = {
-      formFlag: false,
+      formFlag: "",
       formSongId: ""
     
   }
@@ -17,39 +18,31 @@ class SongsSaved extends React.Component {
   handleClick = song => {
       debugger
     this.setState({
-        formFlag: true, 
+        formFlag: song.id, 
         formSongId: song.id
     })
   }
 
   resetFormFlag = e => {
     this.setState({
-        formFlag: false,
+        formFlag: "",
         formSongId: ""
     })
   }
 
   render() {
     const songs = this.props.songs.map((song) => 
-
-        <div>
-        <br/>
-            <strong>{song.trackName}</strong>
-            <br/>
-            <img src={song.artworkUrl100} alt={song.trackName} />
-            <br/>
-            <button id={song.trackId} onClick={() => this.handleClick(song)}>
-              Add to Journal
-            </button>   
-        <br/>
-        </div>
-        
+    <div>
+      <Song song={song} handleClick={this.handleClick}/>
+      {this.state.formFlag === song.id ? <JournalInputForm resetForm={this.resetFormFlag} songId={song.id} /> : null}
+    </div>
     )
     return (
       <div>
        <h2>Your Saved Songs</h2>
+      {/* {this.state.formFlag ? <JournalInputForm resetForm={this.resetFormFlag} songId={this.state.formSongId} /> : null} */}
         <ul>{this.props.loading ? <h3>...loading songs</h3> : songs} </ul>
-        {this.state.formFlag ? <JournalInputForm resetForm={this.resetFormFlag} songId={this.state.formSongId} /> : null}
+ 
       </div>
     );
   }
@@ -58,7 +51,7 @@ class SongsSaved extends React.Component {
 const mapStateToProps = state => {
   console.log("Song State", state)
   return {
-    songs: state.songReducer.songs,
+    songs: state.songReducer.songs.reverse(),
     loading: state.songReducer.loading
   }
 }

@@ -11,8 +11,8 @@ class SongsSaved extends React.Component {
   }
   state = {
       formFlag: "",
-      formSongId: ""
-    
+      formSongId: "",
+      songs: this.props.songs,
   }
 
   handleClick = song => {
@@ -26,23 +26,41 @@ class SongsSaved extends React.Component {
   resetFormFlag = e => {
     this.setState({
         formFlag: "",
-        formSongId: ""
+        formSongId: "", 
+        songs: []
     })
   }
 
+  sortAscending = () => {
+    const songs = this.state.songs;
+    debugger
+    songs.sort((a, b) => a - b)    
+    this.setState({ songs })
+  }
+
+  sortDescending = () => {
+    const { songs } = this.state;
+    songs.sort((a, b) => a - b).reverse()
+    this.setState({ songs })
+  }
+
+
   render() {
     const songs = this.props.songs.map((song) => 
-    <div>
-      <Song song={song} handleClick={this.handleClick}/>
-      {this.state.formFlag === song.id ? <JournalInputForm resetForm={this.resetFormFlag} songId={song.id} /> : null}
-    </div>
+      <div>
+        <Song song={song} handleClick={this.handleClick}/>
+
+        {this.state.formFlag === song.id ? <JournalInputForm resetForm={this.resetFormFlag} songId={song.id} /> : null}
+      </div>
     )
     return (
       <div>
+          <button onClick={this.sortAscending}>asc</button>
+          <button onClick={this.sortDescending}>desc</button>
        <h2>Your Saved Songs</h2>
+       {console.log(songs)}
       {/* {this.state.formFlag ? <JournalInputForm resetForm={this.resetFormFlag} songId={this.state.formSongId} /> : null} */}
         <ul>{this.props.loading ? <h3>...loading songs</h3> : songs} </ul>
- 
       </div>
     );
   }
@@ -51,7 +69,7 @@ class SongsSaved extends React.Component {
 const mapStateToProps = state => {
   console.log("Song State", state)
   return {
-    songs: state.songReducer.songs.reverse(),
+    songs: state.songReducer.songs,
     loading: state.songReducer.loading
   }
 }

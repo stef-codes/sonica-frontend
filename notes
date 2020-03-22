@@ -5,7 +5,13 @@ Break search into smaller components. The components I want are search results, 
 
 Create an error page for routes that aren't found?
 
-Build search sort and filter for songs and journal 
+Build 
+    search songs
+    search journal 
+    sort songs 
+    sort journal
+    filter songs 
+    filter journal
 
 
 Done: 

@@ -4,10 +4,11 @@ function Song({song, handleClick}) {
     return (
         <div>
         <br/>
-            <strong>{song.trackName}</strong>
-            <br/>
+            <h3>{song.trackName}</h3>
             <img src={song.artworkUrl100} alt={song.trackName} />
-            <br/>
+            <br/><br/>
+             Genre: {song.primaryGenreName}
+            <br/><br/>
             <button id={song.trackId} onClick={() => handleClick(song)}>
               Add to Journal
             </button>   

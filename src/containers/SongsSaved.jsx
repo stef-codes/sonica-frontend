@@ -55,9 +55,9 @@ class SongsSaved extends React.Component {
     )
     return (
       <div>
+        <h2>Your Saved Songs</h2>
           <button onClick={this.sortAscending}>asc</button>
           <button onClick={this.sortDescending}>desc</button>
-       <h2>Your Saved Songs</h2>
        {console.log(songs)}
         <ul>{this.props.loading ? <h3>...loading songs</h3> : songs} </ul>
       </div>

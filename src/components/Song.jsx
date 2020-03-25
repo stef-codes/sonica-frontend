@@ -7,7 +7,7 @@ function Song({song, handleClick}) {
             <h3>{song.trackName}</h3>
             <img src={song.artworkUrl100} alt={song.trackName} />
             <br/><br/>
-             Genre {song.primaryGenreName}
+             Genre: {song.primaryGenreName}
             <br/><br/>
             <button id={song.trackId} onClick={() => handleClick(song)}>
               Add to Journal

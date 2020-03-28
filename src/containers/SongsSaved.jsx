@@ -6,17 +6,18 @@ import Song from '../components/Song'
 
 
 class SongsSaved extends React.Component {
-      componentDidMount() {
-      this.props.getSongs();
+    componentDidMount() {
+      this.props.getSongs()
   }
+
   state = {
       formFlag: "",
       formSongId: "",
       songs: this.props.songs
   }
 
+
   handleClick = song => {
-      debugger
     this.setState({
         formFlag: song.id, 
         formSongId: song.id
@@ -33,7 +34,6 @@ class SongsSaved extends React.Component {
 
   sortAscending = () => {
     const songs = this.props.songs;
-    debugger
     songs.sort((a, b) => a.id > b.id ? 1 : -1)    
     this.setState({ songs })
   }
@@ -43,7 +43,6 @@ class SongsSaved extends React.Component {
     songs.sort((a, b) => a.id < b.id ? 1 : -1)    
     this.setState({ songs })
   }
-
 
   render() {
     const songs = this.props.songs.map((song) => 
@@ -58,7 +57,7 @@ class SongsSaved extends React.Component {
         <h2>Your Saved Songs</h2>
           <button onClick={this.sortAscending}>asc</button>
           <button onClick={this.sortDescending}>desc</button>
-       {console.log(songs)}
+
         <ul>{this.props.loading ? <h3>...loading songs</h3> : songs} </ul>
       </div>
     );
@@ -66,7 +65,6 @@ class SongsSaved extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log("Song State", state)
   return {
     songs: state.songReducer.songs.reverse(),
     loading: state.songReducer.loading

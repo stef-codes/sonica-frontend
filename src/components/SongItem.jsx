@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 function SongItem({song}) {
     return (
       <div data-id={song.trackId}>
+          <h3>{song.artistName}</h3>
           <img src={song.artworkUrl100} alt={`${song.trackName}`} />
           <h3>
             <Link

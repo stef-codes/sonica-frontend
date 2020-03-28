@@ -20,8 +20,6 @@ class Search extends React.Component {
         e.preventDefault()
         let searchValue =  this.state.searchTerm
         let searchString = searchValue.replace(" ", "+")
-        console.log(searchValue.replace(" ", "+"))
-        console.log(e.target)
         fetch(`https://itunes.apple.com/search?term=${searchString}&media=music`)
         .then(response => response.json())
         .then(songs => {

@@ -10,9 +10,21 @@ import Journal from './containers/Journal';
 
 
 class App extends React.Component {
+  state = {
+    count: 0
+  }
+
+  theClicker () {
+    this.setState(prevState => {
+      return {count: (prevState.count + 1) * 4}
+    })
+  }
+
   render() {
     return (
     <div>
+      <button onClick={this.theClicker}>Increment</button>
+      <p>Counter: {this.state.count}  </p>
       <Router>
         <NavBar/>
         <Route exact path={"/"} component={HomePage} />
@@ -26,5 +38,6 @@ class App extends React.Component {
     )
   }
 }
+
 
 export default App;

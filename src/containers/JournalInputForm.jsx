@@ -20,7 +20,6 @@ class JournalInputForm extends React.Component {
     handleSubmit = e => {
         debugger
         e.preventDefault()
-        console.log(this.state)
         this.props.addEntry(this.state).then(() =>
         this.props.history.push('/journal'));
         

@@ -1,7 +1,7 @@
 export const getEntries = () => {
     return (dispatch) => {
         dispatch({type:"LOADING_ENTRIES"})
-        fetch("http://localhost:3001/journals")
+        fetch("https://sonica.herokuapp.com/journals")
         .then(response => response.json())
         .then(data => {
           return dispatch({ type: "ENTRIES_LOADED", payload: data });
@@ -12,7 +12,7 @@ export const getEntries = () => {
 export const addEntry = entry => {
     return dispatch => {
         dispatch({type: "LOADING_ENTRIES"})
-        return fetch(`http://localhost:3001/journals`, {
+        return fetch(`https://sonica.herokuapp.com/journals`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

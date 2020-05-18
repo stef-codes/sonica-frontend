@@ -1,7 +1,7 @@
 export const getSongs = () => {
     return (dispatch) => {
         dispatch({type:"LOADING_SONGS"})
-        fetch("http://localhost:3001/songs")
+        fetch("https://sonica.herokuapp.com/songs")
         .then(response => response.json())
         .then(data => {
           return dispatch({ type: "SONGS_LOADED", payload: data });
@@ -12,7 +12,7 @@ export const getSongs = () => {
 export const addSong = song => {
     return dispatch => {
         dispatch({type: "LOADING_SONGS"})
-        return fetch(`http://localhost:3001/songs`, {
+        return fetch(`https://sonica.herokuapp.com/songs`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

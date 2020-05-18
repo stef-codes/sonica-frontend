@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-// import '../homepage.styles.css'
+import Container from 'react-bootstrap/Container'
+import Image from 'react-bootstrap/Image'
 
 const HomePage = () => {
     return (
-    <div>
+    <Container fluid>
+        <Image src="https://unsplash.com/photos/1oKxSKSOowE/100px250" fluid />
         <h1>Welcome to Sonica</h1>
         <Link to="/search"><button>Search</button></Link>
-    </div>
+    </Container>
     )
 }
     

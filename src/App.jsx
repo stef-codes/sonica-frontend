@@ -7,6 +7,7 @@ import SongItem from './components/SongItem';
 import SongView from './containers/SongView'; 
 import SongsSaved from './containers/SongsSaved'
 import Journal from './containers/Journal';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends React.Component {
@@ -34,6 +35,12 @@ class App extends React.Component {
         <Route exact path="/songs" component={SongsSaved} />
         <Route exact path="/journal" component={Journal} />
       </Router>
+      <link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous"
+        />
     </div>
     )
   }

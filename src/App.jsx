@@ -24,8 +24,8 @@ class App extends React.Component {
   render() {
     return (
     <div>
-      <button onClick={this.theClicker}>Increment</button>
-      <p>Counter: {this.state.count}  </p>
+      {/* <button onClick={this.theClicker}>Increment</button>
+      <p>Counter: {this.state.count}  </p> */}
       <Router>
         <NavBar/>
         <Route exact path={"/"} component={HomePage} />

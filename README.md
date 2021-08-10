@@ -1,5 +1,7 @@
 # Sonica (Front-end)
 
+This app can be viewed here: https://sonica.netlify.app
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Instructions to run application 

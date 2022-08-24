@@ -1,4 +1,4 @@
-# Sonica
+# Sonica - Music Journal
 
 https://sonica.netlify.app
 

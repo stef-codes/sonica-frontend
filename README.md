@@ -1,26 +1,24 @@
 # Sonica - Music Journal
 
+This application allows you to search for music that exists on iTunes, save songs as a playlist, and add comments. The combination of these activites allow you to create your music journal. 
+
 https://sonica.netlify.app
+
+<img width="678" alt="Search Results" src="https://user-images.githubusercontent.com/54756529/186502267-aa74ade1-33ed-4328-923e-0e9bf77d6191.png">
 
 
 ## Instructions to run application 
 
-First you want to make sure you follow the instructions to start the backend api associated with this project. Follow the information on this repository: 
-https://github.com/stef-codes/sonica-api
+Step 1: Backend API 
+The backend for this application is located in this repo: https://github.com/stef-codes/sonica-api 
+
+Step 2: Install this application on your local environment (See installation below)
 
 ## Installation
-For this application, in the project directory, you can run:
-### `npm install`
+1. In the correct project directory run `npm install`. This installs necessary packages to run the application. 
 
-This installs necessary packages to run the application. 
-
-## Usage
-Run the command below to start the front-end server. 
-
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Run  `npm start`. This runs the application on your local environment.<br />
+3. Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

@@ -1,8 +1,7 @@
-# Sonica (Front-end)
+# Sonica
 
-This app can be viewed here: https://sonica.netlify.app
+https://sonica.netlify.app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Instructions to run application 
 
@@ -50,8 +49,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
